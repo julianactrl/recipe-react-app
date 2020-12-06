@@ -3,6 +3,7 @@ import style from './recipe.module.css';
 
 
 const Recipe = ({title, calories, image, ingredients}) => {
+
     return(
         <div className={style.recipe} >
            <img className={style.image} src={image} alt="imagen no encontrada" />
@@ -18,3 +19,12 @@ const Recipe = ({title, calories, image, ingredients}) => {
 }
 
 export default Recipe;
+
+// const [caloriesBg, setCaloriesBg] = useState();
+
+//     const caloriesBg = () = {
+//     if ({calories} > 2500) {
+//       return setCaloriesBg('danger')
+//     } 
+
+//   }

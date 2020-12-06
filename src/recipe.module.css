@@ -11,6 +11,9 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+.recipe1 {
+    background-color: red;
+}
 .title{
     margin: 0px;
     margin-bottom: 15px;

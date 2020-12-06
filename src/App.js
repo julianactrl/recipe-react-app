@@ -3,11 +3,13 @@ import Recipes from './Recipes.js'
 import './App.css';
 
 
-function App() {
-  //API autentications
-  const APP_ID = "ab7ab7de"
-  const APP_KEY="ce08c8cab44018cf7482438930a7e578"
+const APP_ID = process.env.REACT_APP_API_ID
+console.log(APP_ID)
+const APP_KEY = process.env.REACT_APP_API_KEY
+console.log(APP_KEY)
 
+function App() {
+  
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState("Chicken");
@@ -17,8 +19,9 @@ function App() {
   }, [query]);
 
   const getRecipes = async () => {
-    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY} `
-    );
+    const url = "https://api.edamam.com/search?q=" + query + "&app_id=" + APP_ID + "&app_key=" + APP_KEY
+    console.log(url)
+    const response = await fetch(url);
     const data = await response.json();
     setRecipes(data.hits);
     console.log(data.hits)
@@ -53,7 +56,7 @@ function App() {
             <Recipes 
             key={recipe.recipe.label}
             title={recipe.recipe.label} 
-            calories={recipe.recipe.calories} 
+            calories={Math.ceil(recipe.recipe.calories)} 
             image={recipe.recipe.image}
             ingredients= {recipe.recipe.ingredients}
             />
