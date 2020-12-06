@@ -38,14 +38,14 @@ function App() {
     <div className="App">
       <form onSubmit={getSearch} className="search-form">
         <input className="search-bar" 
-        placeholder='Buscar receta...'
+        placeholder='Search a recipe...'
         type="text" 
         value={search}
         onChange={updateSearch}
         />
         <button className="search-button" 
         type="submit">
-          Buscar
+          Search
         </button>
       </form>
       <div className="container">
