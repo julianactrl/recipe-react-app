@@ -4,9 +4,9 @@ import './App.css';
 
 
 const APP_ID = process.env.REACT_APP_API_ID
-console.log(APP_ID)
+
 const APP_KEY = process.env.REACT_APP_API_KEY
-console.log(APP_KEY)
+
 
 function App() {
   
